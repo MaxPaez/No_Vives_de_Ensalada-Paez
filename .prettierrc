@@ -9,7 +9,7 @@
   "prettier.embeddedLanguageFormatting": "auto",
   "prettier.htmlWhitespaceSensitivity": "css",
   "prettier.insertPragma": false,
-  "prettier.jsxSingleQuote": false,
+  "prettier.jsxSingleQuote": true,
   "prettier.printWidth": 80,
   "prettier.proseWrap": "preserve",
   "prettier.quoteProps": "as-needed",

@@ -1,15 +1,15 @@
-import { Container } from "@mui/material";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import "./App.css";
+import ListadoDeProductosContainer from "./Test/ListadoDeProductosContainer";
+import "../src/style-sheets/App.css";
 
 function App() {
-
   return (
-    <Container>
-        <NavBar />
-        <Footer/>
-    </Container>
+    <div className="App">
+      <NavBar />
+      <ListadoDeProductosContainer />
+      <Footer />
+    </div>
   );
 }
 
