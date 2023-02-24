@@ -1,0 +1,15 @@
+.iconoCarro {
+  font-size: 2.5em;
+  color: rgb(85, 151, 142);
+}
+
+.CartCant {
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  position: absolute;
+  margin-left: -10px;
+  background-color: black;
+  padding: 1px 5px;
+  border-radius: 25px;
+}
