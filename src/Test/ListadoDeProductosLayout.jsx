@@ -1,49 +1,20 @@
 import React, { eseState, useEffect } from "react";
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  CardActions,
-  Button,
-  CardHeader,
-} from "@mui/material";
-import "../style-sheets/Testimonios.css";
+import { Button, Card } from "react-bootstrap";
+// import "../style-sheets/ListadoDeProductos.css";
 
 function ListadoDeProductosLayout({ productosShop }) {
   return (
-    <div className="contTarjetas">
+    <div className="container">
       {productosShop.map((producto) => (
-        <div key={producto.id}>
-          <Card className="tarjeta" m={4} sx={{ maxWidth: 250 }}>
-            <CardHeader
-              title={producto.categoria + " " + producto.marca}
-            ></CardHeader>
-            <CardMedia
-              component="img"
-              height="140"
-              image={producto.imagen}
-              alt="ZAPATILLAS NIKE AIR HUARACHE"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h6" component="div">
-                Modelo: {producto.modelo}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Precio: ${producto.precio}
-              </Typography>
-              <CardActions>
-                <Button
-                  href="https://google.com"
-                  size="medium"
-                  variant="contained"
-                >
-                  ir a producto
-                </Button>
-              </CardActions>
-            </CardContent>
-          </Card>
-        </div>
+        <Card style={{ width: "18rem" }}>
+          <Card.Img variant="top" src={producto.imagen} />
+          <Card.Body>
+            <Card.Title>{producto.nombre}</Card.Title>
+            <Card.Text>{producto.descripcion}</Card.Text>
+            <Card.Text>{producto.precio}</Card.Text>
+            <Button variant="primary">Comprar</Button>
+          </Card.Body>
+        </Card>
       ))}
     </div>
   );
