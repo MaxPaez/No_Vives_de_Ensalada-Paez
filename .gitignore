@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Personales
-./src/test
+/src/test
