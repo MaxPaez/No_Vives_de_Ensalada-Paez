@@ -1,5 +1,5 @@
 import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
+import Footer from "./Test/Footer";
 import ListadoDeProductosContainer from "./Test/ListadoDeProductosContainer";
 // import "../src/style-sheets/App.css";
 
