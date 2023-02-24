@@ -4,13 +4,11 @@ import "./CartWidget.css";
 
 function CartWidget() {
   return (
-    <a class="nav-link p-2" href="#">
-      <i class="CartIcon" aria-hidden="true">
+    <a className="CartCont nav-link p-2" href="#">
+      <i className="CartIcon">
         <RiShoppingBasketFill className="iconoCarro" />
       </i>
-      <i class="CartCant" aria-hidden="true">
-        4
-      </i>
+      <i className="CartCant">4</i>
     </a>
   );
 }

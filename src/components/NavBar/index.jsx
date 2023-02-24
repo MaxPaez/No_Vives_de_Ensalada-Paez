@@ -4,15 +4,16 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidget from "../CartWidget";
 
-export default function NavBar() {
+function NavBar() {
   return (
-    <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand href="#home">No Vives de Ensaladas</Navbar.Brand>
+    <Navbar bg="light">
+      <Container className="NavCont">
+        <Navbar.Brand className="NavBrand" href="#home">
+          No Vives de Ensaladas
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
             <NavDropdown title="Arma tu menú" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">
                 Plato Principal
@@ -20,7 +21,6 @@ export default function NavBar() {
               <NavDropdown.Item href="#action/3.2">Guarnición</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Bebida</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#link">Sobre Nosotros</Nav.Link>
           </Nav>
         </Navbar.Collapse>
         <CartWidget />
@@ -28,3 +28,5 @@ export default function NavBar() {
     </Navbar>
   );
 }
+
+export default NavBar;
