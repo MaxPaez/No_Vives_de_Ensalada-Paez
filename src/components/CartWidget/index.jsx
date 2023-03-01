@@ -1,4 +1,3 @@
-import React from "react";
 import { RiShoppingBasketFill } from "react-icons/ri";
 import "./CartWidget.css";
 
