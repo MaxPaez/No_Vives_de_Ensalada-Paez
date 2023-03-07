@@ -16,7 +16,8 @@ export default [
 
     precio: 640,
 
-    imagen: "../assets/images/id2-hamburgesa-beggy.webp",
+    imagen:
+      "https://unareceta.com/wp-content/uploads/2017/09/receta-de-hamburguesa-vegana.jpg",
   },
 
   {

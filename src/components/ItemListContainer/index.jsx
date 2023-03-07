@@ -1,6 +1,6 @@
-import Productos from "../mocks/productos";
+import Productos from "../../mocks/productos";
 import { useState, useEffect } from "react";
-import ItenList from "./ItenList";
+import ItenList from "../ItemList";
 
 function ItemListContainer() {
   const [productos, setProductos] = useState([]);
