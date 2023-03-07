@@ -6,7 +6,7 @@ export default [
 
     precio: 350,
 
-    imagen: "../assets/images/id1-brochetas-verduras.jpg",
+    imagen: "/assets/imagenes/id1-brochetas-verduras.jpg",
   },
 
   {
@@ -16,8 +16,7 @@ export default [
 
     precio: 640,
 
-    imagen:
-      "https://unareceta.com/wp-content/uploads/2017/09/receta-de-hamburguesa-vegana.jpg",
+    imagen: "/assets/imagenes/id2-hamburgesa-beggy.webp",
   },
 
   {
@@ -27,7 +26,7 @@ export default [
 
     precio: 720,
 
-    imagen: "../assets/images/id3-pizza-hongos.jpg",
+    imagen: "/assets/imagenes/id3-pizza-hongos.jpg",
   },
 
   {
@@ -37,7 +36,7 @@ export default [
 
     precio: 680,
 
-    imagen: "../assets/images/id4-tacos-vegetales-asados.jpg",
+    imagen: "/assets/imagenes/id4-tacos-vegetales-asados.jpg",
   },
 
   {
@@ -47,6 +46,6 @@ export default [
 
     precio: 420,
 
-    imagen: "../assets/images/id5-wrap-huerta-mix.jpg",
+    imagen: "/assets/imagenes/id5-wrap-huerta-mix.jpg",
   },
 ];
