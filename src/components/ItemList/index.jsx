@@ -1,9 +1,10 @@
 import Item from "../Item";
+import "./ItemList.css";
 
 function ItenList({ productos }) {
   return (
-    <div>
-      <ul>
+    <div className="contenedoProductos">
+      <ul className="productList">
         {productos.map((producto) => (
           <Item key={producto.id} producto={producto} />
         ))}
