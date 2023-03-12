@@ -5,12 +5,14 @@ import { useParams } from "react-router-dom";
 function Root() {
   const params = useParams();
   const isCategoryRoute = Boolean(params.id);
-  console.log(isCategoryRoute);
 
   return (
     <div className="App">
       <NavBar />
-      <ItemListContainer />
+      <ItemListContainer
+        isCategoryRoute={isCategoryRoute}
+        categoryId={params.id}
+      />
     </div>
   );
 }
