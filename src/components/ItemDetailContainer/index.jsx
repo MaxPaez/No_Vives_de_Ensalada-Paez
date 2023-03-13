@@ -1,6 +1,6 @@
 import ItemDetail from "../ItemDetail";
 
-function ItemDetailContainer() {
+function ItemDetailContainer({ isItemRoute, itemId }) {
   return (
     <div>
       <div>Item Dateil Container</div>
