@@ -23,6 +23,9 @@ export default [
 
     imagen: Pprincipal1,
 
+    detalle:
+      "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
+
     categoria: "platoPrincipal",
   },
 
@@ -34,6 +37,9 @@ export default [
     precio: 640,
 
     imagen: Pprincipal2,
+
+    detalle:
+      "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "platoPrincipal",
   },
@@ -47,6 +53,9 @@ export default [
 
     imagen: Pprincipal3,
 
+    detalle:
+      "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
+
     categoria: "platoPrincipal",
   },
 
@@ -58,6 +67,9 @@ export default [
     precio: 680,
 
     imagen: Pprincipal4,
+
+    detalle:
+      "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "platoPrincipal",
   },
@@ -71,6 +83,9 @@ export default [
 
     imagen: Pprincipal5,
 
+    detalle:
+      "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
+
     categoria: "platoPrincipal",
   },
 
@@ -82,6 +97,9 @@ export default [
     precio: 250,
 
     imagen: Guarnicion1,
+
+    detalle:
+      "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "guarnicion",
   },
@@ -95,6 +113,9 @@ export default [
 
     imagen: Guarnicion2,
 
+    detalle:
+      "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
+
     categoria: "guarnicion",
   },
 
@@ -106,6 +127,9 @@ export default [
     precio: 300,
 
     imagen: Guarnicion3,
+
+    detalle:
+      "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "guarnicion",
   },
@@ -119,6 +143,9 @@ export default [
 
     imagen: Guarnicion4,
 
+    detalle:
+      "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
+
     categoria: "guarnicion",
   },
 
@@ -130,6 +157,9 @@ export default [
     precio: 330,
 
     imagen: Guarnicion5,
+
+    detalle:
+      "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "guarnicion",
   },
@@ -143,6 +173,9 @@ export default [
 
     imagen: Bebida1,
 
+    detalle:
+      "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
+
     categoria: "bebida",
   },
 
@@ -154,6 +187,9 @@ export default [
     precio: 280,
 
     imagen: Bebida2,
+
+    detalle:
+      "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "bebida",
   },
@@ -167,6 +203,9 @@ export default [
 
     imagen: Bebida3,
 
+    detalle:
+      "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
+
     categoria: "bebida",
   },
 
@@ -178,6 +217,9 @@ export default [
     precio: 380,
 
     imagen: Bebida4,
+
+    detalle:
+      "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "bebida",
   },

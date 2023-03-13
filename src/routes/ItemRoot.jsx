@@ -4,12 +4,13 @@ import { useParams } from "react-router-dom";
 
 function ItemRoot() {
   const params = useParams();
-  const isDetailRoute = params.id;
+  const isItemRoute = Boolean(params.id);
+  console.log({ isItemRoute });
 
   return (
     <div className="App">
       <NavBar />
-      <ItemDetailContainer isDetailRoute={isDetailRoute} datailId={params.id} />
+      <ItemDetailContainer isItemRoute={isItemRoute} itemId={params.id} />
     </div>
   );
 }
