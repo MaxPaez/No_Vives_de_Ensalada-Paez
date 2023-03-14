@@ -1,5 +1,11 @@
-function ItemDetail() {
-  return <div>Item Detail</div>;
+function ItemDetail({ items }) {
+  console.log(items);
+
+  return (
+    <div>
+      <h2></h2>
+    </div>
+  );
 }
 
 export default ItemDetail;

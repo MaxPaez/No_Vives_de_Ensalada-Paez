@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 function ItemRoot() {
   const params = useParams();
   const isItemRoute = Boolean(params.id);
-  console.log({ isItemRoute });
 
   return (
     <div className="App">
