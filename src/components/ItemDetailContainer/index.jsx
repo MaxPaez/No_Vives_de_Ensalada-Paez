@@ -16,6 +16,7 @@ function ItemDetailContainer({ isItemRoute, itemId }) {
           const productoEncontrado = response.find(
             (item) => item.id === itemId
           );
+          console.log();
           setDetalles(productoEncontrado);
         } else {
           setDetalles(<h2>El producto no fue encontrado</h2>);

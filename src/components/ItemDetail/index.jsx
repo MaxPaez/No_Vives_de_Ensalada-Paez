@@ -1,9 +1,7 @@
 function ItemDetail({ items }) {
-  console.log(items);
-
   return (
     <div>
-      <h2></h2>
+      <h2>Acá esta</h2>
     </div>
   );
 }
