@@ -6,17 +6,17 @@ function ItemDetailContainer({ isItemRoute, itemId }) {
   const [detalles, setDetalles] = useState({});
 
   useEffect(() => {
-    const promesaDetalle = new Promise((resolve, reject) => {
-      resolve(Productos);
-    });
+    const promesaDetalle = new Promise((resolve, reject) =>
+      setTimeout(() => resolve(Productos), 2000)
+    );
 
     promesaDetalle
       .then((response) => {
         if (isItemRoute) {
           const productoEncontrado = response.find(
-            (item) => item.id === itemId
+            (element) => element.id === itemId
           );
-          console.log();
+
           setDetalles(productoEncontrado);
         } else {
           setDetalles(<h2>El producto no fue encontrado</h2>);
@@ -32,5 +32,4 @@ function ItemDetailContainer({ isItemRoute, itemId }) {
     </div>
   );
 }
-
 export default ItemDetailContainer;

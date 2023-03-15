@@ -1,4 +1,5 @@
 function ItemDetail({ items }) {
+  console.log({ items });
   return (
     <div>
       <h2>Acá esta</h2>
