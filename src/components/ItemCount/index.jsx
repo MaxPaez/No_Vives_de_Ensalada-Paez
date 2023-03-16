@@ -21,7 +21,6 @@ const ItemCount = ({ stock }) => {
 
         <p
           style={{
-            paddingInline: 15,
             borderStyle: "solid",
             borderColor: "green",
             padding: 4,
