@@ -1,22 +1,41 @@
 import { useState } from "react";
+import { Container } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 const ItemCount = ({ stock }) => {
   const [counter, setCounter] = useState(1);
 
   return (
-    <div>
-      <button onClick={() => setCounter(counter - 1)} disabled={counter <= 0}>
-        {" "}
-        -{" "}
-      </button>
-      <p>{counter}</p>
-      <button
-        onClick={() => setCounter(counter + 1)}
-        disabled={counter >= stock}
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <ButtonGroup
+        aria-label="Basic example"
+        style={{ alignItems: "baseline" }}
       >
-        {" "}
-        +{" "}
-      </button>
+        <Button
+          variant="success"
+          onClick={() => setCounter(counter - 1)}
+          disabled={counter <= 0}
+        >
+          -
+        </Button>
+
+        <p
+          style={{
+            paddingInline: 15,
+            borderStyle: "solid",
+            borderColor: "green",
+            padding: 4,
+            paddingInline: 14,
+          }}
+        >
+          {counter}
+        </p>
+
+        <Button variant="success" onClick={() => setCounter(counter + 1)}>
+          +
+        </Button>
+      </ButtonGroup>
     </div>
   );
 };

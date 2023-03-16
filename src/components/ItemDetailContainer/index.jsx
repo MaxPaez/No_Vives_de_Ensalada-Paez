@@ -1,7 +1,6 @@
 import ItemDetail from "../ItemDetail";
 import { useState, useEffect } from "react";
 import Productos from "../../mocks/productos";
-import { Container } from "react-bootstrap";
 
 function ItemDetailContainer({ itemRoute, itemId }) {
   const [detalles, setDetalles] = useState({});
