@@ -4,12 +4,11 @@ import { useParams } from "react-router-dom";
 
 function ItemRoot() {
   const params = useParams();
-  const itemRoute = params.id;
 
   return (
     <div className="App">
       <NavBar />
-      <ItemDetailContainer itemRoute={itemRoute} itemId={params.id} />
+      <ItemDetailContainer itemId={params.id} />
     </div>
   );
 }

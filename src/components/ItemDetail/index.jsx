@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 
 function ItemDetail({ detalles }) {
   return (
-    <Container>
+    <div style={{ display: "flex", justifyContent: "center", marginTop: 100 }}>
       <Card style={{ width: "29rem" }}>
         <Card.Header as="h1" style={{ textAlign: "center" }}>
           {detalles.nombre}
@@ -15,7 +15,7 @@ function ItemDetail({ detalles }) {
           <ItemCount stock={""} />
         </Card.Body>
       </Card>
-    </Container>
+    </div>
   );
 }
 

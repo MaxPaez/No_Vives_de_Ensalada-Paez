@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Productos from "../../mocks/productos";
 
 function ItemDetailContainer({ itemRoute, itemId }) {
-  const [detalles, setDetalles] = useState({});
+  const [detalles, setDetalles] = useState(null);
 
   useEffect(() => {
     const promesaDetalle = new Promise((resolve, reject) =>
@@ -12,7 +12,7 @@ function ItemDetailContainer({ itemRoute, itemId }) {
 
     promesaDetalle
       .then((response) => {
-        if (itemRoute) {
+        if (itemId) {
           const productoEncontrado = response.find(
             (element) => element.id == itemId
           );
@@ -26,7 +26,20 @@ function ItemDetailContainer({ itemRoute, itemId }) {
 
   return (
     <div>
-      <ItemDetail detalles={detalles} />
+      {detalles ? (
+        <ItemDetail detalles={detalles} />
+      ) : (
+        <div
+          style={{
+            textAlign: "center",
+            fontSize: 40,
+            fontWeight: "bold",
+            marginTop: 100,
+          }}
+        >
+          <span>Cargando...</span>
+        </div>
+      )}
     </div>
   );
 }
