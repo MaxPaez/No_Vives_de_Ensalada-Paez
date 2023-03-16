@@ -18,7 +18,7 @@ function ItemDetailContainer({ itemRoute, itemId }) {
           );
           setDetalles(productoEncontrado);
         } else {
-          setDetalles("El producto no fue encontrado");
+          setDetalles(console.log("El producto no fue encontrado"));
         }
       })
       .catch((err) => console.log(err));
