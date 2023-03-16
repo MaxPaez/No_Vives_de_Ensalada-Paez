@@ -1,5 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { NavLink } from "react-router-dom";
 
 function Item({ producto }) {
   return (
@@ -11,7 +12,12 @@ function Item({ producto }) {
       <Card.Title>{producto.nombre}</Card.Title>
       <Card.Title>${producto.precio}</Card.Title>
       <Button className="m-3" variant="success">
-        Agregar{" "}
+        <NavLink
+          style={{ textDecoration: "none", color: "white" }}
+          to={`/item/${producto.id}`}
+        >
+          + info
+        </NavLink>
       </Button>
     </Card>
   );

@@ -1,8 +1,9 @@
 import ItemDetail from "../ItemDetail";
 import { useState, useEffect } from "react";
 import Productos from "../../mocks/productos";
+import { Container } from "react-bootstrap";
 
-function ItemDetailContainer({ isItemRoute, itemId }) {
+function ItemDetailContainer({ itemRoute, itemId }) {
   const [detalles, setDetalles] = useState({});
 
   useEffect(() => {
@@ -12,14 +13,13 @@ function ItemDetailContainer({ isItemRoute, itemId }) {
 
     promesaDetalle
       .then((response) => {
-        if (isItemRoute) {
+        if (itemRoute) {
           const productoEncontrado = response.find(
-            (element) => element.id === itemId
+            (element) => element.id == itemId
           );
-
           setDetalles(productoEncontrado);
         } else {
-          setDetalles(<h2>El producto no fue encontrado</h2>);
+          setDetalles("El producto no fue encontrado");
         }
       })
       .catch((err) => console.log(err));
@@ -27,8 +27,7 @@ function ItemDetailContainer({ isItemRoute, itemId }) {
 
   return (
     <div>
-      <div>Item Dateil Container</div>
-      <ItemDetail items={detalles} />
+      <ItemDetail detalles={detalles} />
     </div>
   );
 }
