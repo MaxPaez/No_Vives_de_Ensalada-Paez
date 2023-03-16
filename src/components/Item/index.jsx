@@ -1,10 +1,11 @@
+import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { NavLink } from "react-router-dom";
 
 function Item({ producto }) {
   return (
-    <Card style={{ width: "15em" }} fluid>
+    <Card style={{ width: "15em", margin: "1em" }} fluid>
       <Card.Img
         src={producto.imagen}
         style={{ minHeight: "10em", maxHeight: "10em", overflow: "hidden" }}

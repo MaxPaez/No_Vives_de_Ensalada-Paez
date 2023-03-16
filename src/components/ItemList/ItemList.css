@@ -1,8 +1,0 @@
-div.contenedorProductos {
-  padding: 3em;
-}
-
-ul.productList {
-  display: flex;
-  gap: 1.5em;
-}

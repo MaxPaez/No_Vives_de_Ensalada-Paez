@@ -26,7 +26,7 @@ function ItemListContainer({ isCategoryRoute, categoryId }) {
   }, [categoryId]);
 
   return (
-    <div>
+    <div style={{ marginTop: 100 }}>
       <ItenList productos={productos} />
     </div>
   );
