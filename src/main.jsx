@@ -4,8 +4,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 //Routes
+
+import Cart from "./routes/cart";
 import Root from "./routes/root";
 import ItemRoot from "./routes/ItemRoot.jsx";
+import CustomProvider from "./context";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +25,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/cart",
-    element: <div>Hello world!</div>,
+    element: <Cart />,
   },
   {
     path: "/checkout",
@@ -32,6 +35,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <CustomProvider>
+      <RouterProvider router={router} />
+    </CustomProvider>
   </React.StrictMode>
 );

@@ -6,7 +6,6 @@ import Button from "react-bootstrap/Button";
 
 function ItemDetail({ detalles }) {
   const [agregado, setAgregado] = useState(0);
-  console.log(detalles);
 
   function onAdd(count) {
     setAgregado(count);
