@@ -27,6 +27,8 @@ export default [
       "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "platoPrincipal",
+
+    stock: 20,
   },
 
   {
@@ -42,6 +44,8 @@ export default [
       "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "platoPrincipal",
+
+    stock: 20,
   },
 
   {
@@ -57,6 +61,8 @@ export default [
       "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "platoPrincipal",
+
+    stock: 20,
   },
 
   {
@@ -72,6 +78,8 @@ export default [
       "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "platoPrincipal",
+
+    stock: 20,
   },
 
   {
@@ -87,6 +95,8 @@ export default [
       "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "platoPrincipal",
+
+    stock: 20,
   },
 
   {
@@ -102,6 +112,8 @@ export default [
       "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "guarnicion",
+
+    stock: 20,
   },
 
   {
@@ -117,6 +129,8 @@ export default [
       "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "guarnicion",
+
+    stock: 20,
   },
 
   {
@@ -132,6 +146,8 @@ export default [
       "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "guarnicion",
+
+    stock: 20,
   },
 
   {
@@ -147,6 +163,8 @@ export default [
       "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "guarnicion",
+
+    stock: 20,
   },
 
   {
@@ -162,6 +180,8 @@ export default [
       "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "guarnicion",
+
+    stock: 20,
   },
 
   {
@@ -177,6 +197,8 @@ export default [
       "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "bebida",
+
+    stock: 20,
   },
 
   {
@@ -192,6 +214,8 @@ export default [
       "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "bebida",
+
+    stock: 20,
   },
 
   {
@@ -207,6 +231,8 @@ export default [
       "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "bebida",
+
+    stock: 20,
   },
 
   {
@@ -222,5 +248,7 @@ export default [
       "lorem Ipsum dolor sit amet, consectetur adipiscing elit in fac sapien sed diam non justo  ",
 
     categoria: "bebida",
+
+    stock: 20,
   },
 ];
