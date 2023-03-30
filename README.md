@@ -5,4 +5,4 @@ En el mismo vamos a poder armar un menú de un restaurant vegetariano que trabaj
 
 ##Repositorio de Github
 
-Si vas a bajar los archivos del repositorio de github recuerda que una vez desacargado, abre tu consola y realiza un **npm install** para instalar todas las librerias utilizadas en el proyecto.
+Si vas a bajar los archivos del repositorio de github recuerda que una vez desacargados, debes abrir tu consola y realizar un **npm install** para instalar todas las librerias utilizadas en el proyecto.
