@@ -1,0 +1,52 @@
+.card-custom {
+  width: 18rem;
+  margin: 10px;
+  background-color: rgb(202, 241, 193);
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.075);
+  transition: 0.3s ease-in-out; /* Agrega una transición suave de 0.3 segundos */
+}
+
+.card-custom:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Aumenta la elevación de la sombra */
+  transform: translateY(-0.25rem); /* Levanta la tarjeta 0.25rem hacia arriba */
+}
+
+.card-custom img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-custom .card-body {
+  display: grid;
+  justify-content: inherit;
+  width: 100%;
+}
+
+.card-custom .card-body .card-title {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.card-custom .card-body .card-subtitle {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card-custom .card-body .btn-info {
+  display: inline-block;
+
+  width: 40%;
+  height: 50px;
+  margin: 10px;
+  border-color: #8bc34a;
+  background-color: green;
+  transition: background-color 0.5s ease;
+}
+
+.card-custom .card-body .btn-info:hover {
+  background-color: #8bc34a;
+  color: white;
+  font-weight: bold;
+}

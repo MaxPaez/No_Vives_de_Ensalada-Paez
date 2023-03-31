@@ -1,25 +1,39 @@
-import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 import { NavLink } from "react-router-dom";
+import { RiShoppingBasketFill } from "react-icons/ri";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Card from "react-bootstrap/Card";
+import "./item.css";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 function Item({ producto }) {
   return (
-    <Card style={{ width: "15em", margin: "1em" }} fluid>
-      <Card.Img
-        src={producto.imagen}
-        style={{ minHeight: "10em", maxHeight: "10em", overflow: "hidden" }}
-      />
-      <Card.Title>{producto.nombre}</Card.Title>
-      <Card.Title>${producto.precio}</Card.Title>
-      <Button className="m-3" variant="success">
-        <NavLink
-          style={{ textDecoration: "none", color: "white" }}
-          to={`/item/${producto.id}`}
-        >
-          + info
-        </NavLink>
-      </Button>
+    <Card className="card-custom my-4 mx-auto">
+      <Card.Img variant="top" src={producto.imagen} />
+
+      <Card.Body>
+        <Card.Title>{producto.nombre}</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">
+          ${producto.precio}
+        </Card.Subtitle>
+        <ButtonGroup>
+          <Button variant="info">
+            <RiShoppingBasketFill
+              className="iconoCarro"
+              style={{ color: "white" }}
+            />
+          </Button>
+
+          <Button variant="info">
+            <NavLink
+              style={{ textDecoration: "none", color: "white" }}
+              to={`/item/${producto.id}`}
+            >
+              Ver +
+            </NavLink>
+          </Button>
+        </ButtonGroup>
+      </Card.Body>
     </Card>
   );
 }

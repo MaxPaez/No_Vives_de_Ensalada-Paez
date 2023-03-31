@@ -17,8 +17,8 @@ Dentro del proyecto, se encuentran las siguientes carpetas importantes:
 
 ## Autor:
 
-Mi nombre es Maximiliano Paez y este proyecto fue realizado como entrega final del curso de React de Coder House, si todo sale bien estare recibiendo no solo la acreditación de este curso sino tambien el titulo de Desarrolllador Frontend.
+Mi nombre es Maximiliano Paez y este proyecto fue realizado como entrega final del curso de React de Coder House, si todo sale bien estaré recibiendo no solo la acreditación de este curso sino que también el título de Desarrollador Frontend.
 
 ## Agradecimientos:
 
-Agradezco especialmente al gran profesor **Jorge Zambrano**, a los tutores del **curso Belén Romero**, **Nico Smael** y **Lucia Dias** y a mis compañeros de clase por su apoyo y consejos durante el desarrollo de este curso.
+Agradezco especialmente al gran profesor **Jorge Zambrano**, a los tutores del **curso Belén Romero**, **Nico Smael** y **Lucia Días** y a mis compañeros de clase por su apoyo y consejos durante el desarrollo de este curso.
