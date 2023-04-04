@@ -1,33 +1,27 @@
 import ItemDetail from "../ItemDetail";
 import { useState, useEffect } from "react";
-import Productos from "../../mocks/productos";
 
-function ItemDetailContainer({ itemRoute, itemId }) {
-  const [detalles, setDetalles] = useState(null);
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+
+function ItemDetailContainer({ itemId }) {
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    const promesaDetalle = new Promise((resolve, reject) =>
-      setTimeout(() => resolve(Productos), 2000)
-    );
-
-    promesaDetalle
-      .then((response) => {
-        if (itemId) {
-          const productoEncontrado = response.find(
-            (element) => element.id == itemId
-          );
-          setDetalles(productoEncontrado);
-        } else {
-          setDetalles("El producto no fue encontrado");
+    const db = getFirestore();
+    const itemRef = doc(db, "items", itemId);
+    getDoc(itemRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          setProduct({ id: snapshot.id, ...snapshot.data() });
         }
       })
-      .catch((err) => console.log(err));
-  }, [itemId]);
+      .catch((error) => console.log({ error }));
+  }, []);
 
   return (
     <div>
-      {detalles ? (
-        <ItemDetail detalles={detalles} />
+      {product ? (
+        <ItemDetail product={product} />
       ) : (
         <div
           style={{

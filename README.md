@@ -10,7 +10,6 @@ Para usar el proyecto, primero debes clonar el repositorio en tu máquina local 
 
 Dentro del proyecto, se encuentran las siguientes carpetas importantes:
 
-- `assets`: esta carpeta contiene los archivos de recursos estáticos.
 - `components`: esta carpeta contiene los archivos de los componentes reutilizables de la aplicación.
 - `routes`: contiene los archivos que manejan las rutas de la aplicación.
 - `context`: contiene los archivos que manejan el estado global de la aplicación.
@@ -21,4 +20,4 @@ Mi nombre es Maximiliano Paez y este proyecto fue realizado como entrega final d
 
 ## Agradecimientos:
 
-Agradezco especialmente al gran profesor **Jorge Zambrano**, a los tutores del **curso Belén Romero**, **Nico Smael** y **Lucia Días** y a mis compañeros de clase por su apoyo y consejos durante el desarrollo de este curso.
+Agradezco especialmente al gran profesor **Jorge Zambrano**, a los tutores del curso **Belén Romero**, **Nicolas Smael** y **Lucia Días** y a mis compañeros de clase por su apoyo y consejos durante el desarrollo de este curso.
