@@ -3,23 +3,17 @@ import { createContext, useState } from "react";
 export const Context = createContext();
 
 export function CustomProvider({ children }) {
-  const [itemsAddedQuantity, setItemsAddedQuantity] = useState([]);
+  const [productsAdded, setProductsAdded] = useState([]);
 
-  const onAdd = () => {
-    setItemsAddedQuantity((oldState) => oldState.concat({}));
-  };
+  function onAdd(product, quantity) {
+    setProductsAdded((prevState) => prevState.concat(product));
+  }
 
-  const onRemove = () => {
-    setItemsAddedQuantity((oldState) => oldState.slice(1));
-  };
-
-  const value = {
-    itemsAddedQuantity,
-    onAdd,
-    onRemove,
-  };
-
-  return <Context.Provider value={value}> {children}</Context.Provider>;
+  return (
+    <Context.Provider value={(productsAdded, onAdd)}>
+      {children}
+    </Context.Provider>
+  );
 }
 
 export default CustomProvider;

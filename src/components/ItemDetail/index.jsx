@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ItemCount from "../ItemCount";
 import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { Context } from "../../context";
 
 function ItemDetail({ product }) {
-  const [agregado, setAgregado] = useState(0);
+  const { onAdd } = useContext(Context);
+  const [added, setAdded] = useState(0);
 
-  function onAdd(count) {
-    setAgregado(count);
+  function onAddProduct(count) {
+    setAdded(count);
+    onAdd(product, count);
   }
 
   return (
@@ -28,9 +31,11 @@ function ItemDetail({ product }) {
           </Card.Text>
 
           <div>
-            {agregado == 0 && <ItemCount stock={product.stock} onAdd={onAdd} />}
+            {added == 0 && (
+              <ItemCount stock={product.stock} onAdd={onAddProduct} />
+            )}
             <div style={{ display: "grid", justifyContent: "center" }}>
-              {agregado >= 1 && (
+              {added >= 1 && (
                 <Link to="/cart">
                   <Button variant="success">Terminar compra</Button>
                 </Link>

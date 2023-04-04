@@ -4,13 +4,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 //Routes
+import { CustomProvider } from "./context";
 import Cart from "./routes/cart";
-import Root from "./routes/root";
 import ItemRoot from "./routes/ItemRoot.jsx";
-import CustomProvider from "./context";
+import Root from "./routes/root";
 
 //Firebase
 import { initializeApp } from "firebase/app";
+
 const firebaseConfig = {
   apiKey: "AIzaSyCO_8sgj2476pgbXZQaUULkO5yZ8S8wUO8",
   authDomain: "no-vives-de-ensalada.firebaseapp.com",
@@ -40,10 +41,10 @@ const router = createBrowserRouter([
     path: "/cart",
     element: <Cart />,
   },
-  {
-    path: "/checkout",
-    element: <div>Hello world!</div>,
-  },
+  // {
+  //   path: "/checkout",
+  //   element: <div>Hello world!</div>,
+  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
