@@ -1,4 +1,3 @@
-import NavBar from "../components/NavBar";
 import ItemListContainer from "../components/ItemListContainer";
 import { useParams } from "react-router-dom";
 
@@ -8,7 +7,6 @@ function Root() {
 
   return (
     <div className="App">
-      <NavBar />
       <ItemListContainer
         isCategoryRoute={isCategoryRoute}
         categoryId={params.id}

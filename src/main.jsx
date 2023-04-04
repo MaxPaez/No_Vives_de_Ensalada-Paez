@@ -8,6 +8,8 @@ import { CustomProvider } from "./context";
 import Cart from "./routes/cart";
 import ItemRoot from "./routes/ItemRoot.jsx";
 import Root from "./routes/root";
+import Layout from "./components/Layout";
+import ErrorPage from "./routes/error-page";
 
 //Firebase
 import { initializeApp } from "firebase/app";
@@ -27,24 +29,31 @@ initializeApp(firebaseConfig);
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <Layout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Root />,
+      },
+      {
+        path: "/category/:id",
+        element: <Root />,
+      },
+      {
+        path: "/item/:id",
+        element: <ItemRoot />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      // {
+      //   path: "/checkout",
+      //   element: <div>Hello world!</div>,
+      // },
+    ],
   },
-  {
-    path: "/category/:id",
-    element: <Root />,
-  },
-  {
-    path: "/item/:id",
-    element: <ItemRoot />,
-  },
-  {
-    path: "/cart",
-    element: <Cart />,
-  },
-  // {
-  //   path: "/checkout",
-  //   element: <div>Hello world!</div>,
-  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
