@@ -2,17 +2,20 @@ import { RiShoppingBasketFill } from "react-icons/ri";
 import "./CartWidget.css";
 import { useContext } from "react";
 import { Context } from "../../context";
+import { Link } from "react-router-dom";
 
 function CartWidget() {
-  const { productsAdded } = useContext(Context);
+  const { getQuantity } = useContext(Context);
 
   return (
-    <a className="CartCont nav-link p-2" href="#">
+    <div className="CartCont nav-link p-2" href="#">
       <i className="CartIcon">
-        <RiShoppingBasketFill className="iconoCarro" />
+        <Link to="/cart">
+          <RiShoppingBasketFill className="iconoCarro" />
+        </Link>
       </i>
-      <i className="CartCant">{productsAdded ? productsAdded.length : 0}</i>
-    </a>
+      <i className="CartCant">{getQuantity()}</i>
+    </div>
   );
 }
 

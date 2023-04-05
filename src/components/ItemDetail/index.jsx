@@ -20,12 +20,16 @@ function ItemDetail({ product }) {
         <Card.Header as="h1" style={{ textAlign: "center" }}>
           {product.nombre}
         </Card.Header>
+
         <Card.Body>
           <Card.Img src={product.imagen} />
+
           <Card.Text as="h4">{product.detalle}</Card.Text>
+
           <Card.Text as="h2" style={{ textAlign: "center" }}>
             Precio: ${product.precio}
           </Card.Text>
+
           <Card.Text as="h6" style={{ textAlign: "center" }}>
             Stock:{product.stock}
           </Card.Text>
@@ -34,11 +38,17 @@ function ItemDetail({ product }) {
             {added == 0 && (
               <ItemCount stock={product.stock} onAdd={onAddProduct} />
             )}
+
             <div style={{ display: "grid", justifyContent: "center" }}>
               {added >= 1 && (
-                <Link to="/cart">
-                  <Button variant="success">Terminar compra</Button>
-                </Link>
+                <div>
+                  <Link to="/" style={{ margin: "1em" }}>
+                    <Button variant="success">Seguir comprando</Button>
+                  </Link>
+                  <Link to="/cart" style={{ margin: "1em" }}>
+                    <Button variant="success">Terminar compra</Button>
+                  </Link>
+                </div>
               )}
             </div>
           </div>

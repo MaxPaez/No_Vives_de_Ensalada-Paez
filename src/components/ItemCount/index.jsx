@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 const ItemCount = ({ stock, onAdd }) => {
-  const [counter, setCounter] = useState(1);
+  const [count, setCount] = useState(1);
 
   return (
     <div style={{ display: "grid", justifyContent: "center" }}>
@@ -13,8 +13,8 @@ const ItemCount = ({ stock, onAdd }) => {
       >
         <Button
           variant="success"
-          onClick={() => setCounter((prevState) => prevState - 1)}
-          disabled={counter < 2}
+          onClick={() => setCount((prevState) => prevState - 1)}
+          disabled={count < 2}
         >
           -
         </Button>
@@ -27,18 +27,18 @@ const ItemCount = ({ stock, onAdd }) => {
             paddingInline: 14,
           }}
         >
-          {counter}
+          {count}
         </p>
 
         <Button
           variant="success"
-          onClick={() => setCounter((prevState) => prevState + 1)}
-          disabled={counter === stock}
+          onClick={() => setCount((prevState) => prevState + 1)}
+          disabled={count === stock}
         >
           +
         </Button>
       </ButtonGroup>
-      <Button variant="success" onClick={() => onAdd(counter)}>
+      <Button variant="success" onClick={() => onAdd(count)}>
         Añadir al carrito
       </Button>
     </div>

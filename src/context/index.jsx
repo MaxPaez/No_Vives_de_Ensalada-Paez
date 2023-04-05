@@ -6,11 +6,48 @@ export function CustomProvider({ children }) {
   const [productsAdded, setProductsAdded] = useState([]);
 
   function onAdd(product, quantity) {
-    setProductsAdded((prevState) => prevState.concat(product));
+    const isReadyAdded = isInCart(product);
+
+    if (isReadyAdded) {
+      const productToModify = productsAdded.find(
+        (productsAdded) => productsAdded.id === product.id
+      );
+
+      const productModified = {
+        ...productToModify,
+        quantity: productToModify.quantity + quantity,
+      };
+
+      setProductsAdded((prevState) =>
+        prevState.map((productsAdded) =>
+          productsAdded.id === product.id ? productModified : productsAdded
+        )
+      );
+    } else {
+      setProductsAdded((prevState) =>
+        prevState.concat({ ...product, quantity })
+      );
+    }
+  }
+
+  const getQuantity = () => {
+    let cant = 0;
+    productsAdded.forEach((e) => (cant += e.quantity));
+    return cant;
+  };
+
+  function clear() {
+    setProductsAdded([]);
+  }
+
+  function isInCart(product) {
+    return productsAdded.some(
+      (productsAdded) => productsAdded.id === product.id
+    );
   }
 
   return (
-    <Context.Provider value={(productsAdded, onAdd)}>
+    <Context.Provider value={{ productsAdded, onAdd, clear, getQuantity }}>
       {children}
     </Context.Provider>
   );
