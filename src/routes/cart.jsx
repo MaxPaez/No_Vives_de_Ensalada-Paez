@@ -1,31 +1,50 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../context";
 import { Button, Container } from "react-bootstrap";
-import { collection, getFirestore, addDoc } from "firebase/firestore";
+import {
+  collection,
+  getFirestore,
+  addDoc,
+  doc,
+  updateDoc,
+} from "firebase/firestore";
 
 function Cart() {
   const { productsAdded, clear, removeItem } = useContext(Context);
+  const db = getFirestore();
 
   const total = productsAdded.reduce(
     (accumulator, currentValue) =>
       accumulator + currentValue.precio * currentValue.quantity,
     0
   );
+
   function sendOrder() {
+    const valorTotal = total;
+
     const order = {
       buyer: { nombre: "Max", email: "max@gmail.com", telefono: "115550000" },
       items: productsAdded,
-      total,
+      valorTotal,
     };
 
-    const db = getFirestore();
     const collectionRef = collection(db, "orders");
     addDoc(collectionRef, order)
-      .then((data) => console.log(data))
+      .then(() => {
+        productsAdded.map((product) => {
+          const finalStock = product.stock - product.quantity;
+          updateOrder(product.id, finalStock);
+        });
+      })
       .catch((error) => console.log({ error }));
 
-    return total;
+    return valorTotal;
+  }
+
+  function updateOrder(productId, finalStock) {
+    const itemRef = doc(db, "items", productId);
+    updateDoc(itemRef, { stock: finalStock });
   }
 
   return (
