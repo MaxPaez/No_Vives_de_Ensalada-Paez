@@ -1,36 +1,77 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../context";
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
+import { collection, getFirestore, addDoc } from "firebase/firestore";
 
 function Cart() {
-  const { productsAdded, clear } = useContext(Context);
+  const { productsAdded, clear, removeItem } = useContext(Context);
 
   const total = productsAdded.reduce(
     (accumulator, currentValue) =>
       accumulator + currentValue.precio * currentValue.quantity,
     0
   );
+  function sendOrder() {
+    const order = {
+      buyer: { nombre: "Max", email: "max@gmail.com", telefono: "115550000" },
+      items: productsAdded,
+      total,
+    };
+
+    const db = getFirestore();
+    const collectionRef = collection(db, "orders");
+    addDoc(collectionRef, order)
+      .then((data) => console.log(data))
+      .catch((error) => console.log({ error }));
+
+    return total;
+  }
+
   return (
     <>
       {productsAdded.length > 0 ? (
-        <ul>
+        <Container>
           {productsAdded.map((product) => (
-            <li key={product.id}>
+            <div
+              style={{ display: "flex", marginBlock: "1em" }}
+              key={product.id}
+            >
+              <img
+                src={product.imagen}
+                alt="imagen del producto"
+                style={{ height: "5em", width: "5em", marginInlineEnd: "1em" }}
+              />
               <div>
-                <h3>{product.nombre}</h3>
-                {/* <button onClick={() => handleRemove(product.id)}>Quitar</button> */}
+                <div>
+                  <h3>{product.nombre}</h3>
+                </div>
+                <p>
+                  {product.quantity} x ${product.precio} = $
+                  {product.quantity * product.precio}
+                </p>
               </div>
-              <p>
-                {product.quantity} x ${product.precio} = $
-                {product.quantity * product.precio}
-              </p>
-            </li>
+              <Button
+                variant="success"
+                style={{ maxHeight: "2.5em", marginInlineStart: "1em" }}
+                onClick={() => removeItem(product.id)}
+              >
+                Quitar
+              </Button>
+            </div>
           ))}
           <hr />
-          <h4>Total = ${total.toFixed(2)}</h4>
-          <button onClick={clear}>Vaciar carrito</button>
-        </ul>
+          <h2>Total = ${total.toFixed(2)}</h2>
+          <div style={{ display: "inline-grid" }}>
+            <Button variant="success" onClick={sendOrder}>
+              Pagar
+            </Button>
+
+            <Button variant="success" onClick={clear} style={{ margin: "1em" }}>
+              Vaciar carrito
+            </Button>
+          </div>
+        </Container>
       ) : (
         <div>
           <h3>Sin productos en el carrito, ¡Agrega algo que te guste!</h3>

@@ -36,6 +36,15 @@ export function CustomProvider({ children }) {
     return cant;
   };
 
+  function removeItem(itemId) {
+    const newProductsAdded = [...productsAdded];
+    const index = newProductsAdded.findIndex(
+      (product) => product.id === itemId
+    );
+    newProductsAdded.splice(index, 1);
+    setProductsAdded(newProductsAdded);
+  }
+
   function clear() {
     setProductsAdded([]);
   }
@@ -47,7 +56,9 @@ export function CustomProvider({ children }) {
   }
 
   return (
-    <Context.Provider value={{ productsAdded, onAdd, clear, getQuantity }}>
+    <Context.Provider
+      value={{ productsAdded, onAdd, clear, getQuantity, removeItem }}
+    >
       {children}
     </Context.Provider>
   );
