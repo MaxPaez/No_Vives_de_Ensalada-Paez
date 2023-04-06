@@ -6,6 +6,10 @@ Este proyecto es un sitio web para una tienda en línea de venta de comida veget
 
 Para usar el proyecto, primero debes clonar el repositorio en tu máquina local ejecutando el siguiente comando **git clone https://github.com/tunombredeusuario/proyecto.git**. También necesitarás instalar las dependencias del proyecto. Puedes hacerlo usando **npm install**. Una vez que tengas todo configurado, puedes iniciar el servidor de desarrollo usando "npm start".
 
+## Libreria adicional utilizada
+
+He utilizado la Libreria Sweete Alert 2 paraentregar el ID de la orden, una vez finalizada la compra.
+
 ## Estructura del proyecto:
 
 Dentro del proyecto, se encuentran las siguientes carpetas importantes:
