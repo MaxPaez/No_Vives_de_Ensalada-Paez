@@ -45,6 +45,7 @@ function ItemDetail({ product }) {
                   <Link to="/" style={{ margin: "1em" }}>
                     <Button variant="success">Seguir comprando</Button>
                   </Link>
+
                   <Link to="/cart" style={{ margin: "1em" }}>
                     <Button variant="success">Terminar compra</Button>
                   </Link>

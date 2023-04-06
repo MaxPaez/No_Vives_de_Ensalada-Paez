@@ -38,6 +38,7 @@ const ItemCount = ({ stock, onAdd }) => {
           +
         </Button>
       </ButtonGroup>
+
       <Button variant="success" onClick={() => onAdd(count)}>
         Añadir al carrito
       </Button>
