@@ -15,7 +15,9 @@ function ItemDetail({ product }) {
   }
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", marginTop: 100 }}>
+    <div
+      style={{ display: "flex", justifyContent: "center", marginTop: "8em" }}
+    >
       <Card style={{ width: "29rem" }}>
         <Card.Header
           as="h1"

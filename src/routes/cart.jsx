@@ -70,7 +70,12 @@ function Cart() {
     e.preventDefault();
 
     if (buyerInfo.email !== buyerInfo.emailConfirm) {
-      alert("Los correos electrónicos ingresados no coinciden");
+      Swal.fire({
+        icon: "error",
+        title: "Los correos electrónicos ingresados no coinciden",
+        text: "Intente nuevamente",
+        confirmButtonColor: "green",
+      });
       return;
     }
 
@@ -194,7 +199,7 @@ function Cart() {
           <div style={{ display: "inline-grid" }}>
             {formSubmitted ? (
               <Button variant="success" onClick={sendOrder}>
-                Pagar
+                Realizar compra
               </Button>
             ) : null}
             <Button variant="success" onClick={clear} style={{ margin: "1em" }}>
@@ -203,7 +208,13 @@ function Cart() {
           </div>
         </Container>
       ) : (
-        <div style={{ fontFamily: "Comfortaa, cursive", margin: "3em 1em" }}>
+        <div
+          style={{
+            fontFamily: "Comfortaa, cursive",
+            margin: "3em ",
+            textAlign: "center",
+          }}
+        >
           <h3 style={{ fontWeight: "bold" }}>
             Sin productos en el carrito, ¡Agrega algo que te guste!
           </h3>

@@ -7,7 +7,11 @@ import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar
+      bg="light"
+      expand="lg"
+      style={{ position: "sticky", top: "0", zIndex: "20" }}
+    >
       <Container className="justify-content-between">
         <Navbar.Brand className="NavBrand">
           <NavLink
