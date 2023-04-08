@@ -26,8 +26,7 @@ function Cart() {
   const [showForm, setShowForm] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const total = productsAdded.reduce(
-    (accumulator, currentValue) =>
-      accumulator + currentValue.precio * currentValue.quantity,
+    (accumulator, { precio, quantity }) => accumulator + precio * quantity,
     0
   );
 
@@ -41,17 +40,17 @@ function Cart() {
 
     const collectionRef = collection(db, "orders");
     addDoc(collectionRef, order)
-      .then((response) => {
-        const OrderId = response.id;
-        productsAdded.map((product) => {
-          const finalStock = product.stock - product.quantity;
-          updateOrder(product.id, finalStock);
+      .then(({ id }) => {
+        productsAdded.forEach(({ id: productId, stock, quantity }) => {
+          const finalStock = stock - quantity;
+          const itemRef = doc(db, "items", productId);
+          updateDoc(itemRef, { stock: finalStock });
         });
 
         Swal.fire({
           icon: "success",
           title: "El ID de tu compra es",
-          text: OrderId,
+          text: id,
           showConfirmButton: false,
           timer: 5000,
         }).then(() => {
@@ -60,11 +59,6 @@ function Cart() {
         clear();
       })
       .catch((error) => console.log({ error }));
-  }
-
-  function updateOrder(productId, finalStock) {
-    const itemRef = doc(db, "items", productId);
-    updateDoc(itemRef, { stock: finalStock });
   }
 
   function handleInput(e) {
@@ -87,7 +81,7 @@ function Cart() {
   return (
     <>
       {productsAdded.length > 0 ? (
-        <Container>
+        <Container style={{ fontFamily: "Comfortaa, cursive" }}>
           {productsAdded.map((product) => (
             <div
               style={{ display: "flex", marginBlock: "1em" }}
@@ -100,7 +94,7 @@ function Cart() {
               />
               <div>
                 <div>
-                  <h3>{product.nombre}</h3>
+                  <h3 style={{ fontWeight: "bold" }}>{product.nombre}</h3>
                 </div>
                 <p>
                   {product.quantity} x ${product.precio} = $
@@ -117,9 +111,12 @@ function Cart() {
             </div>
           ))}
           <hr />
-          <h2>Total = ${total.toFixed(2)}</h2>
+          <h2 style={{ fontWeight: "bold" }}>Total = ${total.toFixed(2)}</h2>
           {showForm ? (
-            <Form onSubmit={handleSubmit} style={{ margin: "1em 0" }}>
+            <Form
+              onSubmit={handleSubmit}
+              style={{ margin: "2em 0", fontWeight: "bold" }}
+            >
               <Form.Group controlId="formBasicNombre">
                 <Form.Label>Nombre y apellido</Form.Label>
                 <Form.Control
@@ -132,7 +129,10 @@ function Cart() {
                 />
               </Form.Group>
 
-              <Form.Group controlId="formBasicEmail">
+              <Form.Group
+                controlId="formBasicEmail"
+                style={{ marginBlockStart: "0.5em" }}
+              >
                 <Form.Label>Correo electrónico</Form.Label>
                 <Form.Control
                   type="email"
@@ -144,7 +144,10 @@ function Cart() {
                 />
               </Form.Group>
 
-              <Form.Group controlId="formBasicEmailConfirm">
+              <Form.Group
+                controlId="formBasicEmailConfirm"
+                style={{ marginBlockStart: "0.5em" }}
+              >
                 <Form.Label>Confirma tu correo electrónico</Form.Label>
                 <Form.Control
                   type="email"
@@ -156,7 +159,10 @@ function Cart() {
                 />
               </Form.Group>
 
-              <Form.Group controlId="formBasicTelefono">
+              <Form.Group
+                controlId="formBasicTelefono"
+                style={{ marginBlockStart: "0.5em" }}
+              >
                 <Form.Label>Teléfono</Form.Label>
                 <Form.Control
                   type="text"
@@ -197,8 +203,10 @@ function Cart() {
           </div>
         </Container>
       ) : (
-        <div>
-          <h3>Sin productos en el carrito, ¡Agrega algo que te guste!</h3>
+        <div style={{ fontFamily: "Comfortaa, cursive", margin: "3em 1em" }}>
+          <h3 style={{ fontWeight: "bold" }}>
+            Sin productos en el carrito, ¡Agrega algo que te guste!
+          </h3>
           <Link to="/">
             <Button variant="success" className="mt-3">
               Volver a la tienda

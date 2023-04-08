@@ -8,13 +8,14 @@ function CartWidget() {
   const { getQuantity } = useContext(Context);
 
   return (
-    <div className="CartCont nav-link p-2" href="#">
+    <div className="CartCont nav-link p-2">
       <i className="CartIcon">
         <Link to="/cart">
           <RiShoppingBasketFill className="iconoCarro" />
         </Link>
       </i>
-      <i className="CartCant">{getQuantity()}</i>
+
+      {getQuantity() > 0 ? <i className="CartCant">{getQuantity()}</i> : null}
     </div>
   );
 }

@@ -14,9 +14,16 @@ function Item({ producto }) {
     <Card className="card-custom my-4 mx-auto">
       <Card.Img variant="top" src={producto.imagen} />
 
-      <Card.Body>
-        <Card.Title>{producto.nombre}</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">
+      <Card.Body style={{ fontFamily: "Comfortaa, cursive" }}>
+        <Card.Title style={{ fontWeight: "bold" }}>
+          {producto.nombre}
+        </Card.Title>
+        <Card.Subtitle
+          className="mb-2 text-muted"
+          style={{
+            fontSize: "1.5em",
+          }}
+        >
           ${producto.precio}
         </Card.Subtitle>
         <ButtonGroup>

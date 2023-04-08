@@ -7,24 +7,45 @@ import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
-    <Navbar bg="light">
-      <Container className="NavCont">
+    <Navbar bg="light" expand="lg">
+      <Container className="justify-content-between">
         <Navbar.Brand className="NavBrand">
           <NavLink
             to={"/"}
             style={{
+              alignItems: "center",
               textDecoration: "none",
-              color: "black",
               fontWeight: "bold",
+              display: "inline-flex",
             }}
           >
-            No Vives de Ensaladas
+            <img
+              alt="Logo NVE"
+              src="https://firebasestorage.googleapis.com/v0/b/no-vives-de-ensalada.appspot.com/o/assets%2Fimages%2FLogo%20NVE%20sf.png?alt=media&token=be79579f-08c6-4a2c-a49f-b73edbcad5d9"
+              width="40"
+              className="d-inline-block align-top"
+            />{" "}
+            <div
+              style={{
+                marginInlineStart: "0.5em",
+                color: "#0DB990",
+                fontFamily: "Teko, sans-serif",
+                fontSize: "1.2em",
+              }}
+            >
+              No Vives de <br /> Ensaladas
+            </div>
           </NavLink>
         </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <NavDropdown title="Arma tu menú" id="basic-nav-dropdown">
+            <NavDropdown
+              title="Arma tu menú"
+              id="basic-nav-dropdown"
+              style={{ fontFamily: "Comfortaa, cursive", fontWeight: "bold" }}
+            >
               <NavDropdown.Item>
                 <NavLink
                   to={"/category/platoPrincipal"}

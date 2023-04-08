@@ -17,14 +17,30 @@ function ItemDetail({ product }) {
   return (
     <div style={{ display: "flex", justifyContent: "center", marginTop: 100 }}>
       <Card style={{ width: "29rem" }}>
-        <Card.Header as="h1" style={{ textAlign: "center" }}>
+        <Card.Header
+          as="h1"
+          style={{
+            fontFamily: "Teko, sans-serif",
+            color: "#F45303",
+            fontSize: "3em",
+            fontWeight: "bold",
+            textAlign: "center",
+          }}
+        >
           {product.nombre}
         </Card.Header>
 
-        <Card.Body>
+        <Card.Body
+          style={{ fontFamily: "Comfortaa, cursive", fontWeight: "bold" }}
+        >
           <Card.Img src={product.imagen} />
 
-          <Card.Text as="h4">{product.detalle}</Card.Text>
+          <Card.Text
+            as="h4"
+            style={{ fontWeight: "bolder", marginBlock: "0.5em" }}
+          >
+            {product.detalle}
+          </Card.Text>
 
           <Card.Text as="h2" style={{ textAlign: "center" }}>
             Precio: ${product.precio}
